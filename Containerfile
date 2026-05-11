@@ -30,6 +30,7 @@ FROM ghcr.io/ublue-os/bazzite-gnome:stable
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY files/etc/greetd/config.toml /etc/greetd/config.toml
+COPY files/etc/skel/.config/niri /etc/skel/.config/
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
