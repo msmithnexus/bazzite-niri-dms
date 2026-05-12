@@ -31,11 +31,14 @@ dnf5 -y install \
     dgop \
     dms \
     dms-greeter \
+    fd-find \
+    fzf \
     ghostty \
     material-symbols-fonts \
     matugen \
     niri \
     quickshell \
+    ripgrep \
     wl-clipboard \
     xwayland-satellite
 
