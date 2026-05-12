@@ -23,21 +23,21 @@ dnf5 -y copr enable avengemedia/dms
 dnf5 -y copr enable avengemedia/danklinux
 
 dnf5 -y install \
-	acl \
-	breakpad \
-	cliphist \
-	cava \
-	danksearch \
-	dgop \
-	dms \
-	dms-greeter \
-	ghostty \
-	material-symbols-fonts \
-	matugen \
-	niri \
-	quickshell \
-	wl-clipboard \
-	xwayland-satellite
+    acl \
+    breakpad \
+    cliphist \
+    cava \
+    danksearch \
+    dgop \
+    dms \
+    dms-greeter \
+    ghostty \
+    material-symbols-fonts \
+    matugen \
+    niri \
+    quickshell \
+    wl-clipboard \
+    xwayland-satellite
 
 dnf5 -y copr disable avengemedia/dms
 dnf5 -y copr disable avengemedia/danklinux
@@ -55,4 +55,10 @@ systemctl disable gdm
 systemctl enable greetd
 
 mkdir -p /var/cache/dms-greeter
+
+# REQUIRED for dms-greeter to work (taken from bazzirco)
+tee /usr/lib/sysusers.d/greeter.conf <<'EOF'
+g greeter 767
+u greeter 767 "Greetd greeter"
+EOF
 
