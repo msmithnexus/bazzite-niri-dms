@@ -23,54 +23,5 @@ mkdir -p "$HOME/.config"
 cp -r /etc/skel/.config/niri \
       "$HOME/.config/"
 
-# ==============================================================================
-# Greeter permissions
-# ==============================================================================
-
-setfacl -m u:greeter:x "$HOME"
-setfacl -m u:greeter:x "$HOME/.config"
-setfacl -m u:greeter:x "$HOME/.local"
-setfacl -m u:greeter:x "$HOME/.cache"
-
-mkdir -p "$HOME/.local/state"
-
-setfacl -m u:greeter:x "$HOME/.local/state"
-
-# ==============================================================================
-# DMS permissions
-# ==============================================================================
-
-if [[ -d "$HOME/.config/DankMaterialShell" ]]; then
-    chgrp -R greeter "$HOME/.config/DankMaterialShell"
-    chmod -R g+rX "$HOME/.config/DankMaterialShell"
-fi
-
-if [[ -d "$HOME/.local/state/DankMaterialShell" ]]; then
-    chgrp -R greeter "$HOME/.local/state/DankMaterialShell"
-    chmod -R g+rX "$HOME/.local/state/DankMaterialShell"
-fi
-
-if [[ -d "$HOME/.cache/quickshell" ]]; then
-    chgrp -R greeter "$HOME/.cache/quickshell"
-    chmod -R g+rX "$HOME/.cache/quickshell"
-fi
-
-# ==============================================================================
-# Shared greeter sync links
-# ==============================================================================
-
-mkdir -p /var/cache/dms-greeter
-
-ln -sf \
-  "$HOME/.config/DankMaterialShell/settings.json" \
-  /var/cache/dms-greeter/settings.json
-
-ln -sf \
-  "$HOME/.local/state/DankMaterialShell/session.json" \
-  /var/cache/dms-greeter/session.json
-
-ln -sf \
-  "$HOME/.cache/quickshell/dankshell/dms-colors.json" \
-  /var/cache/dms-greeter/colors.json
-
 touch "$STAMP"
+
