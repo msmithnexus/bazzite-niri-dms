@@ -29,8 +29,9 @@ FROM ghcr.io/ublue-os/bazzite-gnome:stable
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-COPY files/etc/greetd/config.toml /etc/greetd/config.toml
-COPY files/etc/skel/.config/niri /etc/skel/.config/
+COPY system_files/etc/ /etc/
+COPY system_files/usr/ /usr/
+RUN groupadd -r greeter || true
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \

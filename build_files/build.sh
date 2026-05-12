@@ -26,6 +26,7 @@ dnf5 -y install \
 	acl \
 	breakpad \
 	cliphist \
+	cava \
 	danksearch \
 	dgop \
 	dms \
@@ -51,3 +52,6 @@ systemctl disable gdm
 systemctl enable greetd
 
 mkdir -p /var/cache/dms-greeter
+
+systemctl enable bazzite-greeter-group-setup.service
+systemctl --global enable bazzite-user-bootstrap.service

@@ -1,0 +1,10 @@
+[Unit]
+Description=Ensure desktop users belong to greeter group
+After=systemd-user-sessions.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/libexec/bazzite-greeter-group-setup
+
+[Install]
+WantedBy=multi-user.target
