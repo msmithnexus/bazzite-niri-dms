@@ -35,6 +35,7 @@ dnf5 -y install \
     material-symbols-fonts \
     matugen \
     niri \
+    qt6-qt5compat \
     quickshell \
     wl-clipboard \
     xwayland-satellite
