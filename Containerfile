@@ -2,7 +2,6 @@
 FROM scratch AS ctx
 
 COPY build_files /
-COPY system_files /files
 
 # Base Image
 FROM ghcr.io/ublue-os/bazzite-gnome:stable
@@ -26,6 +25,9 @@ FROM ghcr.io/ublue-os/bazzite-gnome:stable
 ## by the package manager.
 
 # RUN rm /opt && mkdir /opt
+
+COPY system_files/etc/ /etc/
+COPY system_files/usr/ /usr/
 
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script

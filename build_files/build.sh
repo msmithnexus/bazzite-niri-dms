@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -ouex pipefail
-cp -avf /ctx/files/. /
 
 ### Install packages
 
