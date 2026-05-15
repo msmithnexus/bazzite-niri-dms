@@ -5,5 +5,3 @@ Description=Initial image bootstrap
 Type=oneshot
 ExecStart=/usr/local/libexec/bazzite-user-bootstrap
 
-[Install]
-WantedBy=default.target

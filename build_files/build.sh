@@ -50,10 +50,6 @@ dnf5 -y copr disable avengemedia/danklinux
 
 systemctl enable podman.socket
 
-### Add single-run bootstrap for adding the proper default niri configs for dms
-
-systemctl --global enable bazzite-user-bootstrap.service
-
 ### Setup dms and dms-search
 
 systemctl --global enable dsearch
@@ -71,4 +67,9 @@ tee /usr/lib/sysusers.d/greeter.conf <<'EOF'
 g greeter 767
 u greeter 767 "Greetd greeter"
 EOF
+
+### Setup initial bootstrap
+mkdir -p /usr/lib/systemd/user/graphical-session.target.wants
+ln -s /usr/lib/systemd/user/bazzite-user-bootstrap.service \
+  /usr/lib/systemd/user/graphical-session.target.wants/bazzite-user-bootstrap.service
 
