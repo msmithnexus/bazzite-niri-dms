@@ -50,9 +50,8 @@ dnf5 -y copr disable avengemedia/danklinux
 
 systemctl enable podman.socket
 
-### Setup dms and dms-search
+### Setup dms
 
-systemctl --global enable dsearch
 systemctl --global enable dms
 
 ### Setup dms-greeter
@@ -68,8 +67,10 @@ g greeter 767
 u greeter 767 "Greetd greeter"
 EOF
 
-### Setup initial bootstrap
 mkdir -p /usr/lib/systemd/user/graphical-session.target.wants
 ln -s /usr/lib/systemd/user/bazzite-user-bootstrap.service \
-  /usr/lib/systemd/user/graphical-session.target.wants/bazzite-user-bootstrap.service
+    /usr/lib/systemd/user/graphical-session.target.wants/bazzite-user-bootstrap.service
+
+ln -s /usr/lib/systemd/user/dsearch.service \
+    /usr/lib/systemd/user/graphical-session.target.wants/dsearch.service
 
