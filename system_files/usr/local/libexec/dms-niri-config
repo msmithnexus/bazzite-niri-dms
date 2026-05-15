@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-STAMP="$HOME/.local/state/bazzite-user-bootstrap.done"
+STAMP="$HOME/.local/state/dms-niri-config.done"
 
 [[ -f "$STAMP" ]] && exit 0
 
@@ -15,7 +15,7 @@ NIRI_DIR="$HOME/.config/niri"
 
 if [[ -d "$NIRI_DIR" ]]; then
     mv "$NIRI_DIR" \
-       "$HOME/.config/niri.pre-bazzite-backup.$(date +%Y%m%d-%H%M%S)"
+       "$HOME/.config/niri.pre-dms-niri-backup.$(date +%Y%m%d-%H%M%S)"
 fi
 
 mkdir -p "$HOME/.config"

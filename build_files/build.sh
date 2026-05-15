@@ -68,8 +68,8 @@ u greeter 767 "Greetd greeter"
 EOF
 
 mkdir -p /usr/lib/systemd/user/graphical-session.target.wants
-ln -s /usr/lib/systemd/user/bazzite-user-bootstrap.service \
-    /usr/lib/systemd/user/graphical-session.target.wants/bazzite-user-bootstrap.service
+ln -s /usr/lib/systemd/user/dms-niri-config.service \
+    /usr/lib/systemd/user/graphical-session.target.wants/dms-niri-config.service
 
 ln -s /usr/lib/systemd/user/dsearch.service \
     /usr/lib/systemd/user/graphical-session.target.wants/dsearch.service
