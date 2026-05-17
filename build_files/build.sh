@@ -45,13 +45,16 @@ dnf5 -y install \
 dnf5 -y copr disable avengemedia/dms
 dnf5 -y copr disable avengemedia/danklinux
 
-### Build fresh xwayland-satellite
+### Build fresh xwayland-satellite (and sneak bluetui in)
 dnf5 -y install rust cargo @development-tools dbus-devel xcb-util-cursor-devel clang git
 
 (
     export CARGO_HOME=/tmp/cargo
     export RUSTUP_HOME=/tmp/rustup
     export CARGO_INSTALL_ROOT=/usr
+
+    # If we have 2 bluetooth receivers, we need an easy way to access them!
+    cargo install bluetui
 
     # Build xwayland-satellite from specific commit
     cd /tmp
