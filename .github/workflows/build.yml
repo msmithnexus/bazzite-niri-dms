@@ -1,5 +1,5 @@
 ---
-iname: Build container image
+name: Build container image
 
 on:
   pull_request:

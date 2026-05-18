@@ -3,7 +3,6 @@ set -ouex pipefail
 
 IMAGE_NAME="${IMAGE_NAME:-interlace}"
 IMAGE_VARIANT="${IMAGE_VARIANT:-}"
-IMAGE_PRETTY_NAME="${IMAGE_PRETTY_NAME:-}"
 
 if [ -z "$IMAGE_VARIANT" ]; then
   FULL_NAME="$IMAGE_NAME"
@@ -11,7 +10,7 @@ else
   FULL_NAME="${IMAGE_NAME}-${IMAGE_VARIANT}"
 fi
 
-IMAGE_REF="ostree-image-signed:docker://ghcr.io/${GITHUB_REPOSITORY_OWNER}/${FULL_NAME}"
+IMAGE_REF="ostree-image-signed:docker://ghcr.io/irunatbullets/${FULL_NAME}"
 
 dnf5 install -y tmux
 
