@@ -35,6 +35,7 @@ jobs:
     runs-on: ubuntu-24.04
 
     strategy:
+      max-parallel: 1
       matrix:
         include:
           - variant:
