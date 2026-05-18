@@ -14,7 +14,7 @@ To switch, run the following from a terminal in any Universal Blue or Fedora
 Atomic based install:
 
 ```
-sudo bootc switch ghcr.io/irunatbullets/bazzite-dms-niri
+sudo bootc switch ghcr.io/irunatbullets/interlace
 ```
 
 **Important Note:** After switching to this image the login will backup any
