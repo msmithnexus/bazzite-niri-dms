@@ -55,6 +55,6 @@ sudo flatpak override \
 
 - https://bazzite.gg/
 - https://danklinux.com/
-- https://niri-wm.github.io/niri/
+- https://github.com/niri-wm/niri
 - https://github.com/bazzirco/bazzirco (for the dms-greeter workaround)
 
