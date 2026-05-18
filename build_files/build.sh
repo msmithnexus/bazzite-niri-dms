@@ -1,23 +1,7 @@
 #!/bin/bash
-
 set -ouex pipefail
 
-### Install packages
-
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
-
-# this installs a package from fedora repos
 dnf5 install -y tmux
-
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
 
 dnf5 -y copr enable avengemedia/dms
 dnf5 -y copr enable avengemedia/danklinux
@@ -47,7 +31,6 @@ dnf5 -y copr disable avengemedia/danklinux
 
 ### Build fresh xwayland-satellite (and sneak bluetui in)
 dnf5 -y install rust cargo @development-tools dbus-devel xcb-util-cursor-devel clang git
-
 (
     export CARGO_HOME=/tmp/cargo
     export RUSTUP_HOME=/tmp/rustup
@@ -64,24 +47,18 @@ dnf5 -y install rust cargo @development-tools dbus-devel xcb-util-cursor-devel c
 
     cargo build --release
 
-    # Copy binary to same place as cargo install (/usr/bin)
     install -Dm755 target/release/xwayland-satellite /usr/bin/xwayland-satellite
 )
-
-### Clean up build artifacts and dev packages
 rm -rf /tmp/cargo /tmp/rustup /tmp/xwayland-satellite
 dnf5 -y remove rust cargo @development-tools dbus-devel xcb-util-cursor-devel clang git
 
 ### Example for enabling a System Unit File (I'll just leave this here for now)
-
 systemctl enable podman.socket
 
 ### Setup dms
-
 systemctl --global enable dms
 
 ### Setup dms-greeter
-
 systemctl disable gdm
 systemctl enable greetd
 
