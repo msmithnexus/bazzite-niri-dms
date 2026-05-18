@@ -16,6 +16,12 @@ Atomic based install:
 ```
 sudo bootc switch ghcr.io/irunatbullets/interlace
 sudo bootc switch ghcr.io/irunatbullets/interlace-nvidia
+```
+
+I have also included these two variants based on `bazzite-dx-gnome`, for people
+who might need more developement tools:
+
+```
 sudo bootc switch ghcr.io/irunatbullets/interlace-dx
 sudo bootc switch ghcr.io/irunatbullets/interlace-dx-nvidia
 ```
@@ -33,22 +39,22 @@ dms greeter sync
 I would like to automate this in future but I'm simply not smart or patient
 enough to do it at the moment.
 
-## For flatpak theme support
+## Flatpak theme support
+
+Mutagen can theme flatpaks by running the following (restart any running apps):
 
 ```
-sudo flatpak override --filesystem=xdg-config/gtk-3.0:rw --filesystem=xdg-config/gtkrc-2.0:rw --filesystem=xdg-config/gtk-4.0:rw --filesystem=xdg-config/gtkrc:rw
+sudo flatpak override \
+--filesystem=xdg-config/gtk-3.0:rw \
+--filesystem=xdg-config/gtkrc-2.0:rw \
+--filesystem=xdg-config/gtk-4.0:rw \
+--filesystem=xdg-config/gtkrc:rw
 ```
 
-## Confessions
+## Credits:
 
-I borrowed this line from bazzirco, which is an image that blends Zirconium and
-Bazzite.
-
-```
-# REQUIRED for dms-greeter to work
-tee /usr/lib/sysusers.d/greeter.conf <<'EOF'
-g greeter 767
-u greeter 767 "Greetd greeter"
-EOF
-```
+- https://bazzite.gg/
+- https://danklinux.com/
+- https://niri-wm.github.io/niri/
+- https://github.com/bazzirco/bazzirco (for the dms-greeter workaround)
 
