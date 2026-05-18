@@ -1,10 +1,10 @@
+ARG BASE_IMAGE=ghcr.io/ublue-os/bazzite-gnome:stable
+FROM ${BASE_IMAGE} AS base
+
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 
 COPY build_files /
-
-ARG BASE_IMAGE=ghcr.io/ublue-os/bazzite-gnome:stable
-FROM ${BASE_IMAGE}
 
 COPY system_files/etc/ /etc/
 COPY system_files/usr/ /usr/
