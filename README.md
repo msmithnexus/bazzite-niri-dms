@@ -1,11 +1,11 @@
-# Bazzite with Dank Material Shell and Niri
+# Interlace
 
-This custom bazzite image is based on bazzite-gnome. It include dms and niri
-along with all of the recommended extras for dms.
+This custom Bazzite image is based on `bazzite-gnome`. It includes Dank Material
+Shell and niri along with all of the recommended extras for Dank Linux.
 
-My goal with this image is to
-offer a vanilla dms/niri experience - though I have added ghostty and tools to
-allow developers to create their own dms plugins.
+My goal with this image is to offer a vanilla DMS/niri experience with gaming
+capabilities (via Bazzite). I have added ghostty as the default termianl along
+with tools to allow developers to create their own DMS plugins.
 
 Feel free to suggest additional software - or just fork this repo and do
 whatever you like.
@@ -15,6 +15,9 @@ Atomic based install:
 
 ```
 sudo bootc switch ghcr.io/irunatbullets/interlace
+sudo bootc switch ghcr.io/irunatbullets/interlace-nvidia
+sudo bootc switch ghcr.io/irunatbullets/interlace-dx
+sudo bootc switch ghcr.io/irunatbullets/interlace-dx-nvidia
 ```
 
 **Important Note:** After switching to this image the login will backup any
