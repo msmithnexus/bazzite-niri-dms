@@ -42,19 +42,19 @@ jobs:
           - variant: nvidia
             base_image: ghcr.io/ublue-os/bazzite-gnome-nvidia:stable
 
-          # - variant: dx
-          #   base_image: ghcr.io/ublue-os/bazzite-dx-gnome:stable
-
-          # - variant: dx-nvidia
-          #   base_image: ghcr.io/ublue-os/bazzite-dx-nvidia-gnome:stable
-
     permissions:
       contents: read
       packages: write
       id-token: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Normalize env
+        run: |
+          echo "IMAGE_NAME=${IMAGE_NAME,,}" >> $GITHUB_ENV
+          echo "IMAGE_REGISTRY=${IMAGE_REGISTRY,,}" >> $GITHUB_ENV
 
       - name: Login to GHCR
         uses: docker/login-action@v3
@@ -63,23 +63,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Normalize env
-        run: |
-          echo "IMAGE_NAME=${IMAGE_NAME,,}" >> $GITHUB_ENV
-          echo "IMAGE_REGISTRY=${IMAGE_REGISTRY,,}" >> $GITHUB_ENV
-
       - name: Maximize build space
         uses: ublue-os/remove-unwanted-software@v1
-
-      - name: Enable build cache directory
-        run: |
-          mkdir -p /tmp/buildah-cache
-
-      - name: Pre-pull base image (ONLY ONCE PER RUN)
-        run: |
-          if [ "${{ matrix.variant }}" = "" ]; then
-            podman pull ${{ matrix.base_image }} || true
-          fi
 
       - name: Get date
         id: date
@@ -122,10 +107,13 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           IMAGE="${{ env.IMAGE_REGISTRY }}/${{ env.IMAGE_NAME }}${{ matrix.variant && format('-%s', matrix.variant) || '' }}"
-          for tag in ${{ steps.meta.outputs.tags }}; do
-            cosign sign -y --key env://COSIGN_PRIVATE_KEY $IMAGE:$tag
+
+          for tag in $TAGS; do
+            echo "Signing ${IMAGE}:${tag}"
+            cosign sign -y --key env://COSIGN_PRIVATE_KEY "${IMAGE}:${tag}"
           done
         env:
           COSIGN_EXPERIMENTAL: false
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
+          TAGS: ${{ steps.meta.outputs.tags }}
 
