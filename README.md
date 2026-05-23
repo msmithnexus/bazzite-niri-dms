@@ -1,4 +1,4 @@
-# Lain
+# bazzite-dms-niri
 
 This custom **Bazzite** image is based on `bazzite-gnome`. It includes **Dank
 Material Shell** and **niri** along with all of the recommended extras for
@@ -15,8 +15,8 @@ To switch, run the following from a terminal in any Universal Blue or Fedora
 Atomic based install:
 
 ```
-sudo bootc switch ghcr.io/irunatbullets/lain
-sudo bootc switch ghcr.io/irunatbullets/lain-nvidia
+sudo bootc switch ghcr.io/irunatbullets/bazzite-dms-niri
+sudo bootc switch ghcr.io/irunatbullets/bazzite-dms-niri-nvidia
 ```
 
 **Important Note:** After switching to this image the login will backup any
