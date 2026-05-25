@@ -49,7 +49,17 @@ sudo flatpak override \
 - **ghostty**
 - **bluetui** - a terminal application for configuring multiple Bluetooth receivers.
 
-## Credits
+## Known issues and workarounds
+
+### The capslock indicator widget doesn't work!
+You have to add yourself to the `input` group like this, and then reboot:
+
+```
+sudo sh -c 'getent group input >> /etc/group'
+sudo usermod -aG input $USER
+```
+
+## Credits:
 
 - https://bazzite.gg/
 - https://danklinux.com/
