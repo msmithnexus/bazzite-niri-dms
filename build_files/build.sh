@@ -12,13 +12,20 @@ fi
 
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/irunatbullets/${FULL_NAME}"
 
-dnf5 install -y tmux
-
+# Install DMS/Niri and any recommended software
+dnf5 -y copr enable irunatbullets/spacium-extras
 dnf5 -y copr enable avengemedia/dms
 dnf5 -y copr enable avengemedia/danklinux
 
-dnf5 -y install \
+dnf5 config-manager setopt copr:copr.fedorainfracloud.org:irunatbullets:spacium-extras.priority=10
+dnf5 config-manager setopt copr:copr.fedorainfracloud.org:avengemedia:dms.priority=20
+dnf5 config-manager setopt copr:copr.fedorainfracloud.org:avengemedia:danklinux.priority=20
+dnf5 config-manager setopt fedora.priority=80
+dnf5 config-manager setopt updates.priority=90
+
+dnf5 -y install --allowerasing \
     acl \
+    bluetui \
     breakpad \
     cliphist \
     cava \
@@ -35,33 +42,16 @@ dnf5 -y install \
     qt6-qtmultimedia \
     qt6-qtsvg \
     quickshell \
-    wl-clipboard
+    tmux \
+    wl-clipboard \
+    xwayland-satellite
 
+dnf5 -y copr disable irunatbullets/spacium-extras
 dnf5 -y copr disable avengemedia/dms
 dnf5 -y copr disable avengemedia/danklinux
 
-dnf5 -y install rust cargo @development-tools dbus-devel xcb-util-cursor-devel clang git
-
-(
-    export CARGO_HOME=/tmp/cargo
-    export RUSTUP_HOME=/tmp/rustup
-    export CARGO_INSTALL_ROOT=/usr
-
-    cargo install bluetui
-
-    cd /tmp
-    git clone https://github.com/Supreeeme/xwayland-satellite.git
-    cd xwayland-satellite
-    git checkout a879e5e
-
-    cargo build --release
-    install -Dm755 target/release/xwayland-satellite /usr/bin/xwayland-satellite
-)
-
-rm -rf /tmp/cargo /tmp/rustup /tmp/xwayland-satellite
-dnf5 -y remove rust cargo @development-tools dbus-devel xcb-util-cursor-devel clang git
-
 systemctl enable podman.socket
+
 systemctl --global enable dms
 
 systemctl disable gdm
