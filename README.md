@@ -1,5 +1,5 @@
 <p align=center>
-  <img src="assets/spacium.png" alt="Spacium" width="318">
+  <img src="assets/spacium.png" alt="Spacium" width="478">
 </p>
 <hr />
 
