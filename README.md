@@ -1,7 +1,8 @@
+<br><br><br>
 <p align=center>
   <img src="assets/spacium.png" alt="Spacium" width="478">
 </p>
-<hr />
+<br><br><br>
 
 # Spacium
 
