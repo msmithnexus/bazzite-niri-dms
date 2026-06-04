@@ -12,8 +12,6 @@ fi
 
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/irunatbullets/${FULL_NAME}"
 
-dnf5 -y distro-sync --refresh
-
 dnf5 -y copr enable irunatbullets/spacium-extras
 dnf5 -y copr enable avengemedia/dms
 dnf5 -y copr enable avengemedia/danklinux
