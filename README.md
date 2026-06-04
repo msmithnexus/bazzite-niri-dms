@@ -1,4 +1,4 @@
-# bazzite-dms-niri
+# Spacium
 
 This custom **Bazzite** image is based on `bazzite-gnome`. It includes **Dank
 Material Shell** and **niri** along with all of the recommended extras for
@@ -15,8 +15,8 @@ To switch, run the following from a terminal in any Universal Blue or Fedora
 Atomic based install:
 
 ```
-sudo bootc switch ghcr.io/irunatbullets/bazzite-dms-niri
-sudo bootc switch ghcr.io/irunatbullets/bazzite-dms-niri-nvidia
+sudo bootc switch ghcr.io/irunatbullets/spacium
+sudo bootc switch ghcr.io/irunatbullets/spacium-nvidia
 ```
 
 **Important Note:** After switching to this image the login will backup any
@@ -67,6 +67,7 @@ ujust add-user-to-input-group
 - https://danklinux.com/
 - https://github.com/niri-wm/niri
 - https://github.com/bazzirco/bazzirco (for the dms-greeter workaround)
+- https://tsuburaya-prod.com/ (for Ultraman)
 
 ## Thanks!
 
