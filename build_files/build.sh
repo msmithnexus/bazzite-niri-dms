@@ -12,18 +12,13 @@ fi
 
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/irunatbullets/${FULL_NAME}"
 
-# Install DMS/Niri and any recommended software
+dnf5 -y distro-sync --refresh
+
 dnf5 -y copr enable irunatbullets/spacium-extras
 dnf5 -y copr enable avengemedia/dms
 dnf5 -y copr enable avengemedia/danklinux
 
-dnf5 config-manager setopt copr:copr.fedorainfracloud.org:irunatbullets:spacium-extras.priority=10
-dnf5 config-manager setopt copr:copr.fedorainfracloud.org:avengemedia:dms.priority=20
-dnf5 config-manager setopt copr:copr.fedorainfracloud.org:avengemedia:danklinux.priority=20
-dnf5 config-manager setopt fedora.priority=80
-dnf5 config-manager setopt updates.priority=90
-
-dnf5 -y install --allowerasing \
+dnf5 -y install \
     acl \
     bluetui \
     breakpad \
@@ -43,7 +38,10 @@ dnf5 -y install --allowerasing \
     qt6-qtsvg \
     quickshell \
     tmux \
-    wl-clipboard \
+    wl-clipboard
+
+dnf5 -y install \
+    --repo=copr:copr.fedorainfracloud.org:irunatbullets:spacium-extras \
     xwayland-satellite
 
 dnf5 -y copr disable irunatbullets/spacium-extras
