@@ -1,3 +1,8 @@
+<p align=center>
+  <img src="assets/spacium.png" alt="Spacium" width="318">
+</p>
+<hr />
+
 # Spacium
 
 This custom **Bazzite** image is based on `bazzite-gnome`. It includes **Dank
