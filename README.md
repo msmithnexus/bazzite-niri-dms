@@ -2,7 +2,15 @@
 <p align=center>
   <img src="assets/spacium.svg" alt="Spacium" width="478">
 </p>
-<br><br>
+<br><br><br>
+<p align="center">
+  <a href="https://github.com/irunatbullets/spacium/actions/workflows/build.yml">
+    <img src="https://github.com/irunatbullets/spacium/actions/workflows/build.yml/badge.svg" alt="Build">
+  </a>
+  <a href="https://github.com/irunatbullets/spacium">
+    <img src="https://img.shields.io/github/last-commit/irunatbullets/spacium" alt="Last Commit">
+  </a>
+</p>
 
 # Spacium
 
