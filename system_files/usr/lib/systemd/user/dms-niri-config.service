@@ -1,7 +1,0 @@
-[Unit]
-Description=Adds the standard dms niri configutation files
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/libexec/dms-niri-config
-

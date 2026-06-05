@@ -65,8 +65,8 @@ chown 767:767 /var/lib/greeter
 
 mkdir -p /usr/lib/systemd/user/graphical-session.target.wants
 
-ln -s /usr/lib/systemd/user/dms-niri-config.service \
-    /usr/lib/systemd/user/graphical-session.target.wants/dms-niri-config.service
+ln -s /usr/lib/systemd/user/spacium.service \
+    /usr/lib/systemd/user/graphical-session.target.wants/spacium.service
 
 ln -s /usr/lib/systemd/user/dsearch.service \
     /usr/lib/systemd/user/graphical-session.target.wants/dsearch.service
