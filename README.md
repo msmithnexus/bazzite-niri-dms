@@ -3,7 +3,10 @@
   <img src="assets/spacium.svg" alt="Spacium" width="478">
 </p>
 <br><br><br>
-<p align="center">
+
+# Spacium
+
+<p>
   <a href="https://github.com/irunatbullets/spacium/actions/workflows/build.yml">
     <img src="https://github.com/irunatbullets/spacium/actions/workflows/build.yml/badge.svg" alt="Build">
   </a>
@@ -11,8 +14,6 @@
     <img src="https://img.shields.io/github/last-commit/irunatbullets/spacium" alt="Last Commit">
   </a>
 </p>
-
-# Spacium
 
 This custom **Bazzite** image is based on `bazzite-gnome`. It includes **Dank
 Material Shell** and **niri** along with all of the recommended extras for
