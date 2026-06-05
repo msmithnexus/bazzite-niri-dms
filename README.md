@@ -2,7 +2,7 @@
 <p align=center>
   <img src="assets/spacium.svg" alt="Spacium" width="478">
 </p>
-<br><br><br>
+<br><br>
 
 # Spacium
 
