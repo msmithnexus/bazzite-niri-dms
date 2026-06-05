@@ -1,6 +1,6 @@
 <br><br><br>
 <p align=center>
-  <img src="assets/spacium.png" alt="Spacium" width="478">
+  <img src="assets/spacium.svg" alt="Spacium" width="478">
 </p>
 <br><br>
 
