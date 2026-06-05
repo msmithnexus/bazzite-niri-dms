@@ -3,10 +3,6 @@
   <img src="assets/spacium.png" alt="Spacium" width="478">
 </p>
 <br><br>
-[![Build](https://github.com/irunatbullets/spacium/actions/workflows/build.yml/badge.svg)](https://github.com/irunatbullets/spacium/actions/workflows/build.yml)
-![License](https://img.shields.io/github/license/irunatbullets/spacium)
-![Last Commit](https://img.shields.io/github/last-commit/irunatbullets/spacium)
-
 
 # Spacium
 
