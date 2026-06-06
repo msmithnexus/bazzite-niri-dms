@@ -82,7 +82,7 @@ ujust add-user-to-input-group
 - https://danklinux.com/
 - https://github.com/niri-wm/niri
 - https://github.com/bazzirco/bazzirco (for the dms-greeter workaround)
-- https://tsuburaya-prod.com/ (for Ultraman)
+- https://tsuburaya-prod.com/ (for Ultraman, the inspiration behind the name of this image)
+- https://zone108.main.jp/s/jp-005gontakana.php<br>FZゴンタかな is licensed under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/).
 
 ## Thanks!
-
