@@ -26,11 +26,12 @@ along with tools to allow developers to create their own DMS plugins.
 Feel free to suggest additional software - or just fork this repo and do
 whatever you like.
 
-To switch, run the following from a terminal in any Universal Blue or Fedora
+To switch, run one of the following commands from a terminal in any Universal Blue or Fedora
 Atomic based install:
 
 ```
 sudo bootc switch ghcr.io/irunatbullets/spacium
+
 sudo bootc switch ghcr.io/irunatbullets/spacium-nvidia
 ```
 
