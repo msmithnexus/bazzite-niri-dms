@@ -36,10 +36,7 @@ dnf5 -y install \
     qt6-qtsvg \
     quickshell \
     tmux \
-    wl-clipboard
-
-dnf5 -y install \
-    --repo=copr:copr.fedorainfracloud.org:irunatbullets:spacium-extras \
+    wl-clipboard \
     xwayland-satellite
 
 dnf5 -y copr disable irunatbullets/spacium-extras
