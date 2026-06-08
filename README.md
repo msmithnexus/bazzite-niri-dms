@@ -15,9 +15,9 @@
   </a>
 </p>
 
-This custom **Bazzite** image is based on `bazzite-gnome`. It includes **Dank
-Material Shell** and **niri** along with all of the recommended extras for
-Dank Linux.
+This custom **Bazzite** image is based on `bazzite-gnome` and
+`bazzite-gnome-nvidia-open`. It includes **Dank Material Shell** and **niri**
+along with all of the recommended extras for Dank Linux.
 
 My goal with this image is to offer a vanilla DMS/niri experience with gaming
 capabilities (via Bazzite). I have added **ghostty** as the default termianl
@@ -26,12 +26,15 @@ along with tools to allow developers to create their own DMS plugins.
 Feel free to suggest additional software - or just fork this repo and do
 whatever you like.
 
-To switch, run one of the following commands from a terminal in any Universal Blue or Fedora
-Atomic based install:
+To switch, run one of the following commands from a terminal in any Universal
+Blue or Fedora Atomic based install. The first is based on `bazzite-gnome`:
 
 ```
 sudo bootc switch ghcr.io/irunatbullets/spacium
+```
+And this image is based on `bazzite-gnome-nvidia-open`:
 
+```
 sudo bootc switch ghcr.io/irunatbullets/spacium-nvidia
 ```
 
@@ -87,3 +90,4 @@ ujust add-user-to-input-group
 - https://zone108.main.jp/s/jp-005gontakana.php<br>FZゴンタかな is licensed under the [SIL Open Font License, Version 1.1](https://github.com/irunatbullets/spacium/blob/5ce3fb4974ead6809fc2b79f841c56f48572e577/assets/licenses/FZ%E3%82%B3%E3%82%99%E3%83%B3%E3%82%BF%E3%81%8B%E3%81%AA-OFL-1.1.md).
 
 ## Thanks!
+

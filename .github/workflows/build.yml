@@ -45,7 +45,7 @@ jobs:
             base_image: "ghcr.io/ublue-os/bazzite-gnome:stable"
 
           - variant: "nvidia"
-            base_image: "ghcr.io/ublue-os/bazzite-gnome-nvidia:stable"
+            base_image: "ghcr.io/ublue-os/bazzite-gnome-nvidia-open:stable"
 
     permissions:
       contents: read
