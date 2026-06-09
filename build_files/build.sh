@@ -60,10 +60,10 @@ EOF
 mkdir -p /var/lib/greeter
 chown 767:767 /var/lib/greeter
 
-mkdir -p /etc/systemd/system/greetd.service.d
-cat > /etc/systemd/system/greetd.service.d/override.conf <<'EOF'
+mkdir -p /etc/systemd/system/dms.service.d
+tee /etc/systemd/system/dms.service.d/selinux.conf > /dev/null <<'EOF'
 [Service]
-SupplementaryGroups=video render input
+SELinuxContext=system_u:system_r:greetd_t:s0
 EOF
 
 mkdir -p /usr/lib/systemd/user/graphical-session.target.wants
