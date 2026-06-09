@@ -60,12 +60,6 @@ EOF
 mkdir -p /var/lib/greeter
 chown 767:767 /var/lib/greeter
 
-mkdir -p /etc/systemd/system/dms.service.d
-tee /etc/systemd/system/dms.service.d/selinux.conf > /dev/null <<'EOF'
-[Service]
-SELinuxContext=system_u:system_r:greetd_t:s0
-EOF
-
 mkdir -p /usr/lib/systemd/user/graphical-session.target.wants
 
 ln -s /usr/lib/systemd/user/spacium.service \
