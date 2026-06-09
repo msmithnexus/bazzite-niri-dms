@@ -60,6 +60,12 @@ EOF
 mkdir -p /var/lib/greeter
 chown 767:767 /var/lib/greeter
 
+mkdir -p /etc/systemd/system/greetd.service.d
+cat > /etc/systemd/system/greetd.service.d/override.conf <<'EOF'
+[Service]
+SupplementaryGroups=video render input
+EOF
+
 mkdir -p /usr/lib/systemd/user/graphical-session.target.wants
 
 ln -s /usr/lib/systemd/user/spacium.service \
