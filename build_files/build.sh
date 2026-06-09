@@ -52,13 +52,6 @@ systemctl enable greetd
 
 mkdir -p /var/cache/dms-greeter
 
-mkdir -p /usr/lib/systemd/system/dms.service.d
-
-tee /usr/lib/systemd/system/dms.service.d/selinux.conf > /dev/null <<'EOF'
-[Service]
-SELinuxContext=system_u:system_r:greetd_t:s0
-EOF
-
 tee /usr/lib/sysusers.d/greeter.conf > /dev/null <<'EOF'
 g greeter 767
 u greeter 767 "greetd greeter" /var/lib/greeter
