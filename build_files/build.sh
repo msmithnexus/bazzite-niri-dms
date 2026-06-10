@@ -27,7 +27,6 @@ dnf5 -y install \
     dms \
     dms-greeter \
     greetd \
-    greetd-selinux \
     ghostty \
     material-symbols-fonts \
     matugen \
