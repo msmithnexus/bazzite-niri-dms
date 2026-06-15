@@ -89,5 +89,8 @@ ujust add-user-to-input-group
 - https://tsuburaya-prod.com/ (for Ultraman, the inspiration behind the name of this image)
 - https://zone108.main.jp/s/jp-005gontakana.php<br>FZゴンタかな is licensed under the [SIL Open Font License, Version 1.1](https://github.com/irunatbullets/spacium/blob/5ce3fb4974ead6809fc2b79f841c56f48572e577/assets/licenses/FZ%E3%82%B3%E3%82%99%E3%83%B3%E3%82%BF%E3%81%8B%E3%81%AA-OFL-1.1.md).
 
-## Thanks!
+## Legal Notice
 
+This project is NOT affiliated with Bazzite, DankLinux, Niri or Tsuburaya.
+
+The software is developed independently and provided as-is, without warranties of any kind. Use at your own risk.
