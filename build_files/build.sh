@@ -22,6 +22,7 @@ dnf5 -y install \
     breakpad \
     cliphist \
     cava \
+    dankcalendar-git \
     danksearch \
     dgop \
     dms \
@@ -35,7 +36,7 @@ dnf5 -y install \
     qt6-qtimageformats \
     qt6-qtmultimedia \
     qt6-qtsvg \
-    quickshell \
+    quickshell-git \
     tmux \
     wl-clipboard \
     xwayland-satellite
