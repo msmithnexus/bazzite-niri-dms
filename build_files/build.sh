@@ -23,6 +23,7 @@ dnf5 -y install \
     cliphist \
     cava \
     danksearch \
+    dankcalendar-git \
     dgop \
     dms \
     dms-greeter \
